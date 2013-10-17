@@ -1,3 +1,55 @@
 name: {$PluginName}
 main: {$PackageName}.{$MainClass}
 version: {$VersionNumber}
+
+permissions:
+    warp.*:
+        description:
+            children:
+            warp.use: true
+            warp.create: true
+            warp.delete: true
+            warp.createop: op
+            warp.return:: true
+    warp.use:
+        description:
+        default: true
+    warp.create:
+        description:
+        default: true
+    warp.delete:
+        description:
+        default: true
+    warp.createop:
+        description:
+        default: op
+    warp.return:
+        description:
+        default: true
+		
+commands:
+    warp:
+        description:
+        usage: /<command> [location]
+        permission: warp.use
+        permission-message: You do not have <permission>
+    create:
+        description:
+        usage: /<command> [name]
+        permission:
+        permission-message: You do not have <permission>
+    delete:
+        description:
+        usage: /<command> [name]
+        permission:
+        permission-message: You do not have <permission>
+    opcreate:
+        description:
+        usage: /<command> [name]
+        permission:
+        permission-message: You do not have <permission>
+    return:
+        description:
+        usage: /<command>
+        permission:
+        permission-message: You do not have <permission>
